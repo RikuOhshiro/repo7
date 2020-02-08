@@ -16,18 +16,18 @@ public class Main {
         ArrayList<ArrayList<String>> resclone = new ArrayList<>();
         ArrayList<ArrayList<String>> resclone1 = new ArrayList<>();
         ArrayList<ArrayList<String>> resclone2 = new ArrayList<>();
-        for (int i = 0; i < dataset.length; i++) {
+        for (int i = 0; i < dataset.length; i++) { //datasetをリストに変換
             list.add(dataset[i]);
         }
-        for (int i = 0; i < list.size(); i++) {
+        for (int i = 0; i < list.size(); i++) { //リストの単語同士で繋いでペアを作る
             for (int j = 0; j < list.size(); j++) {
                 if (isMatch(list.get(j).charAt(0), list.get(i).charAt(list.get(i).length() - 1))) {
                     ArrayList<String> resultSub = new ArrayList<>();
                     resultSub.add(list.get(i));
                     resultSub.add(list.get(j));
-                    if(list.get(i).equals(list.get(j))){
+                    if(list.get(i).equals(list.get(j))){ //はじめと終わりが同じ文字を処理
                     }else{
-                        result.add(resultSub);
+                        result.add(resultSub); //それ以外を別のリストの加える。
                     }
                 }
             }
@@ -37,7 +37,6 @@ public class Main {
         make(result, resclone1, resclone2);
 
         maxsearch(resclone2);
-        System.out.println(resclone2);
 
     }
 }
