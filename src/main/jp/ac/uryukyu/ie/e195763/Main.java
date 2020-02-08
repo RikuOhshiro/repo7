@@ -6,6 +6,7 @@ import static jp.ac.uryukyu.ie.e195763.Search.make;
 import static jp.ac.uryukyu.ie.e195763.Search.maxsearch;
 import static jp.ac.uryukyu.ie.e195763.Search.isMatch;
 
+
 public class Main {
     public static void main(String args[]) {
 
@@ -31,7 +32,6 @@ public class Main {
                 }
             }
         }
-
         make(result, result, resclone);
         make(result, resclone, resclone1);
         make(result, resclone1, resclone2);

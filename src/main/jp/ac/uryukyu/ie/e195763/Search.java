@@ -1,18 +1,32 @@
 package jp.ac.uryukyu.ie.e195763;
-
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
+/**
+ * 複数の単語からしりとり作成。
+ */
 public class Search {
-
-     static boolean isMatch(char char1,char char2) {
+    /**
+     * 引数の文字二つが同じかを判定
+     * @param char1 比較したい文字
+     * @param char2 比較したい文字
+     * @return 同じならtrue,違えばfalse
+     */
+    static boolean isMatch(char char1,char char2) {
         if(char1 == char2){
             return true;
         }else {
             return false;
         }
     }
+
+    /**
+     * ２つのリストの要素からしりとりとして繋がるものを結合
+     * @param array　単語のリストを要素に持つリスト
+     * @param array1　単語のリストを要素に持つリスト
+     * @param array2　単語のリストを要素に持つリスト
+     */
     static void make(ArrayList<ArrayList<String>> array, ArrayList<ArrayList<String>> array1, ArrayList<ArrayList<String>> array2) {
         for (int i = 0; i < array1.size(); i++) {
             for (int j = 0; j < array.size(); j++) {
@@ -34,6 +48,11 @@ public class Search {
             }
         }
     }
+
+    /**
+     * しりとり最長パターンを探して出力
+     * @param array　make()で作った最後のリスト
+     */
     static void maxsearch(ArrayList<ArrayList<String>> array) {
         int max = 0;
         int num = 0;
@@ -50,5 +69,3 @@ public class Search {
         System.out.println("->終了");
     }
 }
-
-
